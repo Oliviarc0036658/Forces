@@ -37,5 +37,40 @@ namespace Forces
         {
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            double force, angle;
+          // Names variables
+            try
+            {
+
+                force = double.Parse(textBox1.Text);
+            }
+
+            catch
+            {
+                MessageBox.Show("Not a correct value.");
+                force = 0.0;
+            }
+
+            try
+            {
+                angle = double.Parse(textBox1.Text);
+               
+            }
+
+            catch
+            {
+                MessageBox.Show("Not a correct value.");
+                angle = 0.0;
+            }
+            // Above checks for any faults in the numbers such as a letter.
+            double Fx = force * cos(angle);
+            label3.Text = "fx = " + Fx;
+
+            double Fy = force * sin(angle);
+            label2.Text = "fy = " + Fy;
+        }
     }
 }
